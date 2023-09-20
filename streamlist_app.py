@@ -1,7 +1,9 @@
 import streamlit
 
 streamlit.title('My Name is Aniket Yadav')
-streamlit.header('Breakfast menu')
-streamlit.text('Panner and Chapati')
-streamlit.text('Dahi Jalebi')
-streamlit.text('Chola Bhatura')
+
+streamlit.header('Breakfast Menu')
+streamlit.text('🥣 Omega 3 & Blueberry Oatmeal')
+streamlit.text('🥗 Kale, Spinach & Rocket Smoothie')
+streamlit.text('🐔 Hard-Boiled Free-Range Egg')
+streamlit.text('🥑🍞 Avocado Toast')
