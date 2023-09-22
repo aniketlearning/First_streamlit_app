@@ -89,7 +89,7 @@ except URLError as e:
 # Display the table on the page.
 
 # don't run the code after that
-streamlit.stop()
+# streamlit.stop()
 
 # connecting througt the snowflake connectors
 
