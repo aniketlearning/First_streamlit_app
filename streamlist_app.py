@@ -37,7 +37,7 @@ streamlit.dataframe(fruits_to_show)
 streamlit.dataframe(my_fruit_list)
 # new section added with the error handling
 
-# streamlit.header("Fruityvice Fruit Advice!")
+streamlit.header("Fruityvice Fruit Advice!")
 
 
 # create the repetabel code block (called function)
@@ -119,7 +119,22 @@ if streamlit.button('Get fruit load list'):
 
 # streamlit.dataframe(my_data_rows)
 
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+# my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
-fruit_choice = streamlit.text_input('What fruit would you like information about?','Jackfruit')
-streamlit.write('The user entered ', fruit_choice)
+# fruit_choice = streamlit.text_input('What fruit would you like information about?','Jackfruit')
+# streamlit.write('The user entered ', fruit_choice)
+
+# Allow the end users to add the fruit
+def insert_row_snowflake(new_fruit):
+    with  my_cnx.cursor() as my_cur:
+        my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+        return "Thanks for adding" + new_fruit
+
+add_my_fruit = streamlit.text_input('What fruit would you like to add ?') 
+if streamlit.button('Add fruit to the list'):
+    snowflake.connector.connect(**streamlit.secrets["snowflake"])
+    back_from_function = insert_row_snowflake(add_my_fruit)
+    streamlit.text(back_from_function)
+
+
+
